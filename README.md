@@ -1,58 +1,21 @@
 # 🇮🇳 Bharat Trip Planner
-
 AI-powered multi-agent travel planner for India.
 
 ---
+## Demo Scenario
+Suppose I want to travel:
 
-## Features
+Delhi → Manali
 
-- Multi-Agent Workflow using LangGraph
-- FastAPI Backend
-- Streamlit Frontend
-- Gemini LLM
-- Tavily Internet Search
-- Weather Information
-- Travel Suggestions
-- Budget Validation
-- Conditional Replanning
+3 Days
+2 Travellers
+Budget ₹25,000
 
----
+Instead of opening multiple websites, I simply enter these details, and the AI generates a personalized itinerary automatically.
 
-## Architecture
+## Output Sceenshots 
 
-Streamlit
-
-↓
-
-FastAPI
-
-↓
-
-LangGraph
-
-↓
-
-Planner Agent
-
-↓
-
-Tool Executor
-
-↓
-
-Internet APIs
-
-↓
-
-Itinerary Generator
-
-↓
-
-Budget Agent
-
-↓
-
-Conditional Replan
+in /screenshots folder
 
 ---
 
@@ -142,6 +105,78 @@ Open
 http://localhost:8501
 ```
 
+---
+
+## Features
+
+- Multi-Agent Workflow using LangGraph
+- FastAPI Backend
+- Streamlit Frontend
+- Gemini LLM
+- Tavily Internet Search
+- Weather Information
+- Travel Suggestions
+- Budget Validation
+- Conditional Replanning
+
+---
+                    USER
+
+                      │
+                      ▼
+
+               Streamlit UI
+
+                      │
+                      ▼
+
+                 FastAPI API
+
+                      │
+                      ▼
+
+                 LangGraph
+
+               ┌─────────────┐
+               │             │
+               ▼             │
+          Planner Agent ◄────┘
+               │
+               ▼
+         Tool Executor
+
+      ┌────────┼────────┐
+      ▼        ▼        ▼
+
+   Search   Weather   Travel
+
+      │        │        │
+      └────────┼────────┘
+               ▼
+
+         Tool Results
+
+               ▼
+
+    Itinerary Generator
+
+               ▼
+
+         Budget Agent
+
+               ▼
+
+     Budget Validation
+          |         | 
+  (under budget) (over budget) 
+          |         |
+          │         │
+          ▼         │
+         END        │
+                    │
+                 Replan
+                    │
+                    └──────────────► Planner Agent
 ---
 
 ## Docker
