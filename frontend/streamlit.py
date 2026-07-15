@@ -410,12 +410,6 @@ with tab3:
             "Executes Internet Search, Weather and Travel tools using MCP."
         )
 
-    with st.expander("🗺️ Itinerary Generator"):
-
-        st.write(
-            "Uses Gemini LLM together with tool results to generate a personalized itinerary."
-        )
-
     with st.expander("💰 Budget Agent"):
 
         st.write(
@@ -426,6 +420,12 @@ with tab3:
 
         st.write(
             "If the estimated cost exceeds the budget, a cheaper itinerary is generated."
+        )
+
+    with st.expander("🗺️ Itinerary Generator (LLM call)"):
+
+        st.write(
+            "Uses Gemini LLM together with tool results to generate a personalized itinerary."
         )
 
     st.divider()
