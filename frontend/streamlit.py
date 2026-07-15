@@ -221,7 +221,7 @@ For every trip I typically need to search for:
 - 🍽️ Local food
 - 💰 Budget estimation
 
-Even for a short weekend trip, this planning process usually takes **30–60 minutes**.
+Even for a short weekend trip, this planning process usually takes **1-2 days**.
 
 I wanted to build a single AI application that could gather all this information from the internet and generate a complete travel plan automatically.
 """
@@ -374,21 +374,23 @@ with tab3:
 
                   ▼
 
-       Itinerary Generator
-
-                  ▼
-
             Budget Agent
 
                   ▼
 
         Budget Validation
+          |           | 
+  (under budget)   (over budget) ─────   REPLAN ──────────────► Planner Agent
+          |         
+          │         
+          ▼         
+      Itinerary 
+      Generator  (LLM)    
+          |           
+          |  
+          ▼
 
-             │         │
-
-             ▼         ▼
-
-           END      Replan
+         END   
 """
     )
 

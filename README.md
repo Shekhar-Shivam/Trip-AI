@@ -158,25 +158,24 @@ http://localhost:8501
 
                ▼
 
-    Itinerary Generator
-
-               ▼
-
          Budget Agent
 
                ▼
 
-     Budget Validation
-          |         | 
-  (under budget) (over budget) 
-          |         |
-          │         │
-          ▼         │
-         END        │
-                    │
-                 Replan
-                    │
-                    └──────────────► Planner Agent
+       Budget Validation
+          |           | 
+  (under budget)   (over budget) ─────   REPLAN ──────────────► Planner Agent
+          |         
+          │         
+          ▼         
+      Itinerary 
+      Generator  (LLM)    
+          |           
+          |  
+          ▼
+
+         END     
+                    
 ---
 
 ## Docker
